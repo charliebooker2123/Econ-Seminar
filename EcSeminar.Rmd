@@ -104,6 +104,18 @@ Race2006 <- Race2006 %>%
 Race2011 <- Race2011 %>%
   rename(c("ADKXE001" = "Total_Population", "ADKXE002" = "White", "ADKXE003" = "Black", "ADKXE004" = "Native_American", "ADKXE005" = "Asian", "ADKXE006" = "Pacific", "ADKXE007" = "Some_Other", "ADKXE008" = "Two_or_More", "ADKXE009" = "Two_or_More_Some_Other", "ADKXE010" = "Three_or_More",
            "ADKXM001" = "Total_PopulationErr", "ADKXM002" = "WhiteErr", "ADKXM003" = "BlackErr", "ADKXM004" = "Native_AmericanErr", "ADKXM005" = "AsianErr", "ADKXM006" = "PacificErr", "ADKXM007" = "Some_OtherErr", "ADKXM008" = "Two_or_MoreErr", "ADKXM009" = "Two_or_More_Some_OtherErr", "ADKXM010" = "Three_or_MoreErr"))
+```
+
+```{r}
+#Education by Sex edits
+#selecting and getting rid of columns
+Education2006 <- Education2006 %>%
+  select(GISJOIN, YEAR, STATE:COUNTYA, NAME_E:JN9M035)
+
+Education2011 <- Education2011 %>%
+  select(GISJOIN, YEAR, STATE:COUNTYA, NAME_E:ADMYM035)
+
+#renaming Education
 
 ```
 
