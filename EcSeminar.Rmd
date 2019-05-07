@@ -72,6 +72,7 @@ GC2011 <- GC2011 %>%
 
 ```{r}
 #per capita income edits
+#selecting and getting rid of columns
 PCI2006 <- PCI2006 %>%
   select(GISJOIN, YEAR, STATE:COUNTYA, NAME_E:JQBM001)
 
@@ -84,5 +85,16 @@ PCI2006 <- PCI2006 %>%
 
 PCI2011 <- PCI2011 %>%
   rename(c("ADOLE001" = "PCI_Estimate", "ADOLM001" = "PCI_Margin_of_Error"))
+```
+
+```{r}
+#Race edits
+#selecting and getting rid of columns
+Race2006 <- Race2006 %>%
+  select(GISJOIN, YEAR, STATE:COUNTYA, NAME_E:JMBM010)
+
+Race2011 <- Race2011 %>%
+  select(GISJOIN, YEAR, STATE:COUNTYA, NAME_E:ADKXM010)
+
 ```
 
