@@ -1,0 +1,88 @@
+---
+title: "Econ Seminar"
+author: "Charlie Booker"
+date: "May 5, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(plyr)
+library(knitr)
+library(fs)
+library(graphics)
+#this library needed to read in excel
+library(readxl)
+#these libraries will be needed to plot map
+library(ggplot2)
+library(ggmap)
+library(maps)
+library(mapdata)
+library(janitor)
+library(kableExtra)
+library(dplyr)
+library(mapproj)
+```
+
+```{r}
+#loading in data
+patents <- read_excel("Patent_County.xlsx", skip = 1)
+
+#gini coefficient
+GC2006 <- read.csv("GC2006-2010.csv")
+GC2011 <- read.csv("GC2011-2015.csv")
+
+#per capita income
+PCI2006 <- read.csv("PCI2006.csv")
+PCI2011 <- read.csv("PCI2010.csv")
+
+#Race
+Race2006 <- read.csv("Race2006.csv")
+Race2011 <- read.csv("Race2010.csv")
+
+#Education by Sex
+Education2006 <- read.csv("EducationSex2006.csv")
+Education2011 <- read.csv("EducationSex2010.csv")
+
+```
+
+```{r}
+#editng the data sets
+#trimming out unnecessary columns
+```
+
+
+```{r}
+#Gini Coefficients edits
+#selecting and getting rid of columns
+GC2006 <- GC2006 %>%
+  select(GISJOIN, YEAR, STATE:COUNTYA, NAME_E:J4TM001)
+
+GC2011 <- GC2011 %>%
+  select(GISJOIN, YEAR, STATE:COUNTYA, NAME_E:AD4BM001)
+
+#renaming Gini Coefficient Columns
+GC2006 <- GC2006 %>%
+  rename(c("J4TE001" = "GC_Estimate", "J4TM001" = "GC_Margin_of_Error"))
+
+GC2011 <- GC2011 %>% 
+  rename(c("AD4BE001" = "GC_Estimate", "AD4BM001" = "GC_Margin_of_Error"))
+```
+
+```{r}
+#per capita income edits
+PCI2006 <- PCI2006 %>%
+  select(GISJOIN, YEAR, STATE:COUNTYA, NAME_E:JQBM001)
+
+PCI2011 <- PCI2011 %>%
+  select(GISJOIN, YEAR, STATE:COUNTYA, NAME_E:ADOLM001)
+
+#renaming per capita income
+PCI2006 <- PCI2006 %>%
+  rename(c("JQBE001" = "PCI_Estimate", "JQBM001" = "PCI_Margin_of_Error"))
+
+PCI2011 <- PCI2011 %>%
+  rename(c("ADOLE001" = "PCI_Estimate", "ADOLM001" = "PCI_Margin_of_Error"))
+```
+

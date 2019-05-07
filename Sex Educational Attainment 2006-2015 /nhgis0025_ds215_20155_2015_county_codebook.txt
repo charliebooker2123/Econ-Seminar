@@ -1,0 +1,225 @@
+--------------------------------------------------------------------------------
+Codebook for NHGIS data file 'nhgis0025_ds215_20155_2015_county'
+--------------------------------------------------------------------------------
+ 
+Contents
+    - Data Summary
+    - Data Dictionary
+    - Citation and Use
+ 
+Additional documentation on NHGIS data sources is available at: 
+    https://www.nhgis.org/documentation/tabular-data 
+ 
+--------------------------------------------------------------------------------
+Data Summary
+--------------------------------------------------------------------------------
+ 
+Year:             2011-2015
+Geographic level: County (by State)
+Dataset:          2015 American Community Survey: 5-Year Data [2011-2015, Block Groups & Larger Areas]
+   NHGIS code:    2011_2015_ACS5a
+   NHGIS ID:      ds215
+Breakdown(s):     Geographic Subarea:
+                     Total area (00)
+Data type(s):     (E) Estimates
+                  (M) Margins of error
+ 
+Tables:
+ 
+1. Sex by Educational Attainment for the Population 25 Years and Over
+   Universe:    Population 25 years and over
+   Source code: B15002
+   NHGIS code:  ADMY
+ 
+--------------------------------------------------------------------------------
+Data Dictionary
+--------------------------------------------------------------------------------
+ 
+Context Fields 
+        GISJOIN:     GIS Join Match Code
+        YEAR:        Data File Year
+        REGIONA:     Region Code
+        DIVISIONA:   Division Code
+        STATE:       State Name
+        STATEA:      State Code
+        COUNTY:      County Name
+        COUNTYA:     County Code
+        COUSUBA:     County Subdivision Code
+        PLACEA:      Place Code
+        TRACTA:      Census Tract Code
+        BLKGRPA:     Block Group Code
+        CONCITA:     Consolidated City Code
+        AIANHHA:     American Indian Area/Alaska Native Area/Hawaiian Home Land Code
+        RES_ONLYA:   American Indian Area/Alaska Native Area (Reservation or Statistical Entity Only) Code
+        TRUSTA:      American Indian Area (Off-Reservation Trust Land Only)/Hawaiian Home Land Code
+        AITSCEA:     Tribal Subdivision/Remainder Code
+        ANRCA:       Alaska Native Regional Corporation Code
+        CBSAA:       Metropolitan Statistical Area/Micropolitan Statistical Area Code
+        CSAA:        Combined Statistical Area Code
+        METDIVA:     Metropolitan Division Code
+        NECTAA:      New England City and Town Area Code
+        CNECTAA:     Combined New England City and Town Area Code
+        NECTADIVA:   New England City and Town Area Division Code
+        UAA:         Urban Area Code
+        CDCURRA:     Congressional District (2013-2017, 113th-114th Congress) Code
+        SLDUA:       State Legislative District (Upper Chamber) Code
+        SLDLA:       State Legislative District (Lower Chamber) Code
+        ZCTA5A:      5-Digit ZIP Code Tabulation Area Code
+        SUBMCDA:     Subminor Civil Division Code
+        SDELMA:      School District (Elementary)/Remainder Code
+        SDSECA:      School District (Secondary)/Remainder Code
+        SDUNIA:      School District (Unified)/Remainder Code
+        PUMA5A:      Public Use Microdata Sample Area (PUMA) Code
+        BTTRA:       Tribal Census Tract Code
+        BTBGA:       Tribal Block Group Code
+ 
+Data Type (E):
+    Estimates
+ 
+        NAME_E:      Area Name
+ 
+    Table 1:     Sex by Educational Attainment for the Population 25 Years and Over
+    Universe:    Population 25 years and over
+    Source code: B15002
+    NHGIS code:  ADMY
+        ADMYE001:    Total
+        ADMYE002:    Male
+        ADMYE003:    Male: No schooling completed
+        ADMYE004:    Male: Nursery to 4th grade
+        ADMYE005:    Male: 5th and 6th grade
+        ADMYE006:    Male: 7th and 8th grade
+        ADMYE007:    Male: 9th grade
+        ADMYE008:    Male: 10th grade
+        ADMYE009:    Male: 11th grade
+        ADMYE010:    Male: 12th grade, no diploma
+        ADMYE011:    Male: High school graduate (includes equivalency)
+        ADMYE012:    Male: Some college, less than 1 year
+        ADMYE013:    Male: Some college, 1 or more years, no degree
+        ADMYE014:    Male: Associate's degree
+        ADMYE015:    Male: Bachelor's degree
+        ADMYE016:    Male: Master's degree
+        ADMYE017:    Male: Professional school degree
+        ADMYE018:    Male: Doctorate degree
+        ADMYE019:    Female
+        ADMYE020:    Female: No schooling completed
+        ADMYE021:    Female: Nursery to 4th grade
+        ADMYE022:    Female: 5th and 6th grade
+        ADMYE023:    Female: 7th and 8th grade
+        ADMYE024:    Female: 9th grade
+        ADMYE025:    Female: 10th grade
+        ADMYE026:    Female: 11th grade
+        ADMYE027:    Female: 12th grade, no diploma
+        ADMYE028:    Female: High school graduate (includes equivalency)
+        ADMYE029:    Female: Some college, less than 1 year
+        ADMYE030:    Female: Some college, 1 or more years, no degree
+        ADMYE031:    Female: Associate's degree
+        ADMYE032:    Female: Bachelor's degree
+        ADMYE033:    Female: Master's degree
+        ADMYE034:    Female: Professional school degree
+        ADMYE035:    Female: Doctorate degree
+ 
+Data Type (M):
+    Margins of error
+ 
+        NAME_M:      Area Name
+ 
+    Table 1:     Sex by Educational Attainment for the Population 25 Years and Over
+    Universe:    Population 25 years and over
+    Source code: B15002
+    NHGIS code:  ADMY
+        ADMYM001:    Total
+        ADMYM002:    Male
+        ADMYM003:    Male: No schooling completed
+        ADMYM004:    Male: Nursery to 4th grade
+        ADMYM005:    Male: 5th and 6th grade
+        ADMYM006:    Male: 7th and 8th grade
+        ADMYM007:    Male: 9th grade
+        ADMYM008:    Male: 10th grade
+        ADMYM009:    Male: 11th grade
+        ADMYM010:    Male: 12th grade, no diploma
+        ADMYM011:    Male: High school graduate (includes equivalency)
+        ADMYM012:    Male: Some college, less than 1 year
+        ADMYM013:    Male: Some college, 1 or more years, no degree
+        ADMYM014:    Male: Associate's degree
+        ADMYM015:    Male: Bachelor's degree
+        ADMYM016:    Male: Master's degree
+        ADMYM017:    Male: Professional school degree
+        ADMYM018:    Male: Doctorate degree
+        ADMYM019:    Female
+        ADMYM020:    Female: No schooling completed
+        ADMYM021:    Female: Nursery to 4th grade
+        ADMYM022:    Female: 5th and 6th grade
+        ADMYM023:    Female: 7th and 8th grade
+        ADMYM024:    Female: 9th grade
+        ADMYM025:    Female: 10th grade
+        ADMYM026:    Female: 11th grade
+        ADMYM027:    Female: 12th grade, no diploma
+        ADMYM028:    Female: High school graduate (includes equivalency)
+        ADMYM029:    Female: Some college, less than 1 year
+        ADMYM030:    Female: Some college, 1 or more years, no degree
+        ADMYM031:    Female: Associate's degree
+        ADMYM032:    Female: Bachelor's degree
+        ADMYM033:    Female: Master's degree
+        ADMYM034:    Female: Professional school degree
+        ADMYM035:    Female: Doctorate degree
+ 
+--------------------------------------------------------------------------------
+Citation and Use of NHGIS Data
+--------------------------------------------------------------------------------
+ 
+All persons are granted a limited license to use this documentation and the
+accompanying data, subject to the following conditions:
+
+* REDISTRIBUTION: You will not redistribute the data without permission.
+
+  You may publish a subset of the data to meet journal requirements for accessing 
+  data related to a particular publication. Contact us for permission for any other 
+  redistribution; we will consider requests for free and commercial redistribution.
+
+* CITATION: You will cite NHGIS appropriately.
+
+    * Publications and research reports employing NHGIS data (either tabular or GIS) 
+      should include the following citation:
+
+        Steven Manson, Jonathan Schroeder, David Van Riper, and Steven Ruggles. 
+        IPUMS National Historical Geographic Information System: Version 13.0 
+        [Database]. Minneapolis: University of Minnesota. 2018. 
+        http://doi.org/10.18128/D050.V13.0
+
+    * Publications and research reports employing school attendance areas data 
+      (either tabular or GIS) must cite it appropriately. The citation should 
+      include the following:
+
+        The College of William and Mary and the Minnesota Population Center.
+        School Attendance Boundary Information System (SABINS): Version 1.0.
+        Minneapolis, MN: University of Minnesota 2011.
+
+    * For policy briefs, online resources, or articles in the popular press, we 
+      recommend that you cite the use of NHGIS data as follows:
+
+        IPUMS NHGIS, University of Minnesota, www.nhgis.org.
+
+    * If possible, citations involving school attendance areas should also include
+      the URL for the SABINS site:
+
+        http://www.sabinsdata.org/.
+
+These terms of use are a legally binding agreement. You can use the data only in 
+accordance with these terms, and any other use is a violation of the agreement. 
+Violations may result in revocation of the agreement and prohibition from using other 
+IPUMS data. If IPUMS or our partners are harmed from your violation, you are 
+responsible for all damages, including reasonable attorney's fees and expenses.
+        
+In addition, we request that users send us a copy of any publications, research
+reports, or educational material making use of the data or documentation.
+
+Send electronic material to: nhgis@umn.edu
+
+Printed matter should be sent to:
+
+    IPUMS NHGIS
+    Institute for Social Research and Data Innovation
+    University of Minnesota
+    50 Willey Hall
+    225 19th Ave S
+    Minneapolis, MN 55455
