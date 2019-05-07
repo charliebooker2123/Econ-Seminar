@@ -46,6 +46,7 @@ Education2006 <- read.csv("EducationSex2006.csv")
 Education2011 <- read.csv("EducationSex2010.csv")
 
 #county coordinate data
+coordinates <- read_xlsx('County Coordinates.xlsx')
 
 ```
 
