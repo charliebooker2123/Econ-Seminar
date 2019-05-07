@@ -96,5 +96,10 @@ Race2006 <- Race2006 %>%
 Race2011 <- Race2011 %>%
   select(GISJOIN, YEAR, STATE:COUNTYA, NAME_E:ADKXM010)
 
+#renaming race
+Race2006 <- Race2006 %>%
+  rename(c("JMBE001" = "Total_Population", "JMBE002" = "White", "JMBE003" = "Black", "JMBE004" = "Native_American", "JMBE005" = "Asian", "JMBE006" = "Pacific", "JMBE007" = "Some_Other", "JMBE008" = "Two_or_More", "JMBE009" = "Two_or_More_Some_Other", "JMBE010" = "Three_or_More",
+           "JMBM001" = "Total_PopulationErr", "JMBM002" = "WhiteErr", "JMBM003" = "BlackErr", "JMBM004" = "Native_AmericanErr", "JMBM005" = "AsianErr", "JMBM006" = "PacificErr", "JMBM007" = "Some_OtherErr", "JMBM008" = "Two_or_MoreErr", "JMBM009" = "Two_or_More_Some_OtherErr", "JMBM010" = "Three_or_MoreErr"))
+
 ```
 
