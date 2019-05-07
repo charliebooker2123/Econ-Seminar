@@ -116,6 +116,8 @@ Education2011 <- Education2011 %>%
   select(GISJOIN, YEAR, STATE:COUNTYA, NAME_E:ADMYM035)
 
 #renaming Education
-
+Education2006 <- Education2006 %>%
+  rename(c("JN9E001" = "Total_Population", "JN9E002" = "MalePop", "JN9E003" = "MNoSchool", "JN9E004" = "M4thGrade", "JN9E005" = "M5thGrade", "JN9E006" = "M7thGrade", "JN9E007" = "M9thGrade", "JN9E008" = "M10thGrade", "JN9E009" = "M11thGrade", "JN9E010" = "M12thGrade", "JN9E011" = "MHighSchoolGrad", "JN9E012" = "MSomeCollege1", "JN9E013" = "MSomeCollege1Plus", "JN9E014" = "MAssociate", "JN9E015" = "MBachelor", "JN9E016" = "MMaster", "JN9E017" = "MProfessional", "JN9E018" = "MDoctorate",
+           "JN9E019" = "FemalePop", "JN9E020" = "FNoSchool", "JN9E021" = "F4thGrade", "JN9E022" = "F5thGrade", "JN9E023" = "F7thGrade", "JN9E024" = "F9thGrade", "JN9E025" = "F10thGrade", "JN9E026" = "F11thGrade", "JN9E027" = "F12thGrade", "JN9E028" = "FHighSchoolGrad", "JN9E029" = "FSomeCollege1", "JN9E030" = "FSomeCollege1Plus", "JN9E031" = "FAssociate", "JN9E032" = "FBachelor", "JN9E033" = "FMaster", "JN9E034" = "FProfessional", "JN9E035" = "FDoctorate"))
 ```
 
