@@ -45,6 +45,8 @@ Race2011 <- read.csv("Race2010.csv")
 Education2006 <- read.csv("EducationSex2006.csv")
 Education2011 <- read.csv("EducationSex2010.csv")
 
+#county coordinate data
+
 ```
 
 ```{r}
