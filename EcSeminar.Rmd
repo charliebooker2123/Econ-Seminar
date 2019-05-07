@@ -46,7 +46,7 @@ Education2006 <- read.csv("EducationSex2006.csv")
 Education2011 <- read.csv("EducationSex2010.csv")
 
 #county coordinate data
-coordinates <- read_xlsx('County Coordinates.xlsx')
+coordinates <- read_xlsx('County Coordinates.xlsx', skip = 1)
 
 ```
 
@@ -126,5 +126,17 @@ Education2006 <- Education2006 %>%
 Education2011 <- Education2011 %>%
   rename(c("ADMYE001" = "Total_Population", "ADMYE002" = "MalePop", "ADMYE003" = "MNoSchool", "ADMYE004" = "M4thGrade", "ADMYE005" = "M5thGrade", "ADMYE006" = "M7thGrade", "ADMYE007" = "M9thGrade", "ADMYE008" = "M10thGrade", "ADMYE009" = "M11thGrade", "ADMYE010" = "M12thGrade", "ADMYE011" = "MHighSchoolGrad", "ADMYE012" = "MSomeCollege1", "ADMYE013" = "MSomeCollege1Plus", "ADMYE014" = "MAssociate", "ADMYE015" = "MBachelor", "ADMYE016" = "MMaster", "ADMYE017" = "MProfessional", "ADMYE018" = "MDoctorate",
            "ADMYE019" = "FemalePop", "ADMYE020" = "FNoSchool", "ADMYE021" = "F4thGrade", "ADMYE022" = "F5thGrade", "ADMYE023" = "F7thGrade", "ADMYE024" = "F9thGrade", "ADMYE025" = "F10thGrade", "ADMYE026" = "F11thGrade", "ADMYE027" = "F12thGrade", "ADMYE028" = "FHighSchoolGrad", "ADMYE029" = "FSomeCollege1", "ADMYE030" = "FSomeCollege1Plus", "ADMYE031" = "FAssociate", "ADMYE032" = "FBachelor", "ADMYE033" = "FMaster", "ADMYE034" = "FProfessional", "ADMYE035" = "FDoctorate"))
+```
+
+```{r}
+#editing the coordinates data set
+#renaming the columns
+coordinates <- coordinates %>%
+  rename(c("X__1" = "Sort", "X__2" = "State", "X__3" = "FIPS", "X__4" = "County", "X__5" = "CountySeats", "-2010" = "Population", "Longitude1" = "Longitude", "Latitude1" = "Latitude"))
+
+#getting rid of unneeded columns 
+coordinates <- coordinates %>%
+  select(Sort, State, FIPS, County, Population, Longitude, Latitude)
+  
 ```
 
