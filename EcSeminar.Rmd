@@ -191,10 +191,22 @@ patents$County <- patents$CountyNew1
 pat_coord <- inner_join(patents, coordinates, by = "FIPS")
 #renaming variables in set so it can merge
 pat_coord <- pat_coord %>%
-  rename(c('State or Territory' = "State"))
+  rename(c("State" = "Abbreviation", 'State or Territory' = "STATE", "County.x" = "COUNTY"))
 
 #merging patent and coordinates data set with gini coefficient
 
-gcpcoord <- inner_join(pat_coord, GC2006, )
+gcpcoord <- inner_join(pat_coord, GC2006, by = c("STATE", "COUNTY"))
+```
+
+```{r}
+#merging all sets
+all <- inner_join(gcpcoord, GC2011, by = c("STATE", "COUNTY")) %>%
+  inner_join(., Race2006, by = c("STATE", "COUNTY")) %>%
+  inner_join(., Race2011, by = c("STATE", "COUNTY")) %>%
+  inner_join(., PCI2006, by = c("STATE", "COUNTY")) %>%
+  inner_join(., PCI2011, by = c("STATE", "COUNTY")) %>%
+  inner_join(., Education2006, by = c("STATE", "COUNTY")) %>%
+  inner_join(., Education2011, by = c("STATE", "COUNTY")) 
+  
 ```
 
