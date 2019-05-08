@@ -67,10 +67,10 @@ GC2011 <- GC2011 %>%
 
 #renaming Gini Coefficient Columns
 GC2006 <- GC2006 %>%
-  rename(c("J4TE001" = "GC_Estimate", "J4TM001" = "GC_Margin_of_Error"))
+  rename(c("J4TE001" = "GC_Estimate6", "J4TM001" = "GC_Margin_of_Error6"))
 
 GC2011 <- GC2011 %>% 
-  rename(c("AD4BE001" = "GC_Estimate", "AD4BM001" = "GC_Margin_of_Error"))
+  rename(c("AD4BE001" = "GC_Estimate11", "AD4BM001" = "GC_Margin_of_Error11"))
 ```
 
 ```{r}
@@ -84,10 +84,10 @@ PCI2011 <- PCI2011 %>%
 
 #renaming per capita income
 PCI2006 <- PCI2006 %>%
-  rename(c("JQBE001" = "PCI_Estimate", "JQBM001" = "PCI_Margin_of_Error"))
+  rename(c("JQBE001" = "PCI_Estimate6", "JQBM001" = "PCI_Margin_of_Error6"))
 
 PCI2011 <- PCI2011 %>%
-  rename(c("ADOLE001" = "PCI_Estimate", "ADOLM001" = "PCI_Margin_of_Error"))
+  rename(c("ADOLE001" = "PCI_Estimate11", "ADOLM001" = "PCI_Margin_of_Error11"))
 ```
 
 ```{r}
@@ -101,12 +101,12 @@ Race2011 <- Race2011 %>%
 
 #renaming race
 Race2006 <- Race2006 %>%
-  rename(c("JMBE001" = "Total_Population", "JMBE002" = "White", "JMBE003" = "Black", "JMBE004" = "Native_American", "JMBE005" = "Asian", "JMBE006" = "Pacific", "JMBE007" = "Some_Other", "JMBE008" = "Two_or_More", "JMBE009" = "Two_or_More_Some_Other", "JMBE010" = "Three_or_More",
-           "JMBM001" = "Total_PopulationErr", "JMBM002" = "WhiteErr", "JMBM003" = "BlackErr", "JMBM004" = "Native_AmericanErr", "JMBM005" = "AsianErr", "JMBM006" = "PacificErr", "JMBM007" = "Some_OtherErr", "JMBM008" = "Two_or_MoreErr", "JMBM009" = "Two_or_More_Some_OtherErr", "JMBM010" = "Three_or_MoreErr"))
+  rename(c("JMBE001" = "Total_Population6", "JMBE002" = "White6", "JMBE003" = "Black6", "JMBE004" = "Native_American6", "JMBE005" = "Asian6", "JMBE006" = "Pacific6", "JMBE007" = "Some_Other6", "JMBE008" = "Two_or_More6", "JMBE009" = "Two_or_More_Some_Other6", "JMBE010" = "Three_or_More6",
+           "JMBM001" = "Total_PopulationErr6", "JMBM002" = "WhiteErr6", "JMBM003" = "BlackErr6", "JMBM004" = "Native_AmericanErr6", "JMBM005" = "AsianErr6", "JMBM006" = "PacificErr6", "JMBM007" = "Some_OtherErr6", "JMBM008" = "Two_or_MoreErr6", "JMBM009" = "Two_or_More_Some_OtherErr6", "JMBM010" = "Three_or_MoreErr6"))
 
 Race2011 <- Race2011 %>%
-  rename(c("ADKXE001" = "Total_Population", "ADKXE002" = "White", "ADKXE003" = "Black", "ADKXE004" = "Native_American", "ADKXE005" = "Asian", "ADKXE006" = "Pacific", "ADKXE007" = "Some_Other", "ADKXE008" = "Two_or_More", "ADKXE009" = "Two_or_More_Some_Other", "ADKXE010" = "Three_or_More",
-           "ADKXM001" = "Total_PopulationErr", "ADKXM002" = "WhiteErr", "ADKXM003" = "BlackErr", "ADKXM004" = "Native_AmericanErr", "ADKXM005" = "AsianErr", "ADKXM006" = "PacificErr", "ADKXM007" = "Some_OtherErr", "ADKXM008" = "Two_or_MoreErr", "ADKXM009" = "Two_or_More_Some_OtherErr", "ADKXM010" = "Three_or_MoreErr"))
+  rename(c("ADKXE001" = "Total_Population11", "ADKXE002" = "White11", "ADKXE003" = "Black11", "ADKXE004" = "Native_American11", "ADKXE005" = "Asian11", "ADKXE006" = "Pacific11", "ADKXE007" = "Some_Other11", "ADKXE008" = "Two_or_More11", "ADKXE009" = "Two_or_More_Some_Other11", "ADKXE010" = "Three_or_More11",
+           "ADKXM001" = "Total_PopulationErr11", "ADKXM002" = "WhiteErr11", "ADKXM003" = "BlackErr11", "ADKXM004" = "Native_AmericanErr11", "ADKXM005" = "AsianErr11", "ADKXM006" = "PacificErr11", "ADKXM007" = "Some_OtherErr11", "ADKXM008" = "Two_or_MoreErr11", "ADKXM009" = "Two_or_More_Some_OtherErr11", "ADKXM010" = "Three_or_MoreErr11"))
 ```
 
 ```{r}
@@ -120,12 +120,12 @@ Education2011 <- Education2011 %>%
 
 #renaming Education
 Education2006 <- Education2006 %>%
-  rename(c("JN9E001" = "Total_Population", "JN9E002" = "MalePop", "JN9E003" = "MNoSchool", "JN9E004" = "M4thGrade", "JN9E005" = "M5thGrade", "JN9E006" = "M7thGrade", "JN9E007" = "M9thGrade", "JN9E008" = "M10thGrade", "JN9E009" = "M11thGrade", "JN9E010" = "M12thGrade", "JN9E011" = "MHighSchoolGrad", "JN9E012" = "MSomeCollege1", "JN9E013" = "MSomeCollege1Plus", "JN9E014" = "MAssociate", "JN9E015" = "MBachelor", "JN9E016" = "MMaster", "JN9E017" = "MProfessional", "JN9E018" = "MDoctorate",
-           "JN9E019" = "FemalePop", "JN9E020" = "FNoSchool", "JN9E021" = "F4thGrade", "JN9E022" = "F5thGrade", "JN9E023" = "F7thGrade", "JN9E024" = "F9thGrade", "JN9E025" = "F10thGrade", "JN9E026" = "F11thGrade", "JN9E027" = "F12thGrade", "JN9E028" = "FHighSchoolGrad", "JN9E029" = "FSomeCollege1", "JN9E030" = "FSomeCollege1Plus", "JN9E031" = "FAssociate", "JN9E032" = "FBachelor", "JN9E033" = "FMaster", "JN9E034" = "FProfessional", "JN9E035" = "FDoctorate"))
+  rename(c("JN9E001" = "Total_Population6", "JN9E002" = "MalePop6", "JN9E003" = "MNoSchool6", "JN9E004" = "M4thGrade6", "JN9E005" = "M5thGrade6", "JN9E006" = "M7thGrade6", "JN9E007" = "M9thGrade6", "JN9E008" = "M10thGrade6", "JN9E009" = "M11thGrade6", "JN9E010" = "M12thGrade6", "JN9E011" = "MHighSchoolGrad6", "JN9E012" = "MSomeCollege16", "JN9E013" = "MSomeCollege1Plus6", "JN9E014" = "MAssociate6", "JN9E015" = "MBachelor6", "JN9E016" = "MMaster6", "JN9E017" = "MProfessional6", "JN9E018" = "MDoctorate6",
+           "JN9E019" = "FemalePop6", "JN9E020" = "FNoSchool6", "JN9E021" = "F4thGrade6", "JN9E022" = "F5thGrade6", "JN9E023" = "F7thGrade6", "JN9E024" = "F9thGrade6", "JN9E025" = "F10thGrade6", "JN9E026" = "F11thGrade6", "JN9E027" = "F12thGrade6", "JN9E028" = "FHighSchoolGrad6", "JN9E029" = "FSomeCollege16", "JN9E030" = "FSomeCollege1Plus6", "JN9E031" = "FAssociate6", "JN9E032" = "FBachelor6", "JN9E033" = "FMaster6", "JN9E034" = "FProfessional6", "JN9E035" = "FDoctorate6"))
 
 Education2011 <- Education2011 %>%
-  rename(c("ADMYE001" = "Total_Population", "ADMYE002" = "MalePop", "ADMYE003" = "MNoSchool", "ADMYE004" = "M4thGrade", "ADMYE005" = "M5thGrade", "ADMYE006" = "M7thGrade", "ADMYE007" = "M9thGrade", "ADMYE008" = "M10thGrade", "ADMYE009" = "M11thGrade", "ADMYE010" = "M12thGrade", "ADMYE011" = "MHighSchoolGrad", "ADMYE012" = "MSomeCollege1", "ADMYE013" = "MSomeCollege1Plus", "ADMYE014" = "MAssociate", "ADMYE015" = "MBachelor", "ADMYE016" = "MMaster", "ADMYE017" = "MProfessional", "ADMYE018" = "MDoctorate",
-           "ADMYE019" = "FemalePop", "ADMYE020" = "FNoSchool", "ADMYE021" = "F4thGrade", "ADMYE022" = "F5thGrade", "ADMYE023" = "F7thGrade", "ADMYE024" = "F9thGrade", "ADMYE025" = "F10thGrade", "ADMYE026" = "F11thGrade", "ADMYE027" = "F12thGrade", "ADMYE028" = "FHighSchoolGrad", "ADMYE029" = "FSomeCollege1", "ADMYE030" = "FSomeCollege1Plus", "ADMYE031" = "FAssociate", "ADMYE032" = "FBachelor", "ADMYE033" = "FMaster", "ADMYE034" = "FProfessional", "ADMYE035" = "FDoctorate"))
+  rename(c("ADMYE001" = "Total_Population11", "ADMYE002" = "MalePop11", "ADMYE003" = "MNoSchool11", "ADMYE004" = "M4thGrade11", "ADMYE005" = "M5thGrade11", "ADMYE006" = "M7thGrade11", "ADMYE007" = "M9thGrade11", "ADMYE008" = "M10thGrade11", "ADMYE009" = "M11thGrade11", "ADMYE010" = "M12thGrade11", "ADMYE011" = "MHighSchoolGrad11", "ADMYE012" = "MSomeCollege111", "ADMYE013" = "MSomeCollege1Plus11", "ADMYE014" = "MAssociate11", "ADMYE015" = "MBachelor11", "ADMYE016" = "MMaster11", "ADMYE017" = "MProfessional11", "ADMYE018" = "MDoctorate11",
+           "ADMYE019" = "FemalePop11", "ADMYE020" = "FNoSchool11", "ADMYE021" = "F4thGrade11", "ADMYE022" = "F5thGrade11", "ADMYE023" = "F7thGrade11", "ADMYE024" = "F9thGrade11", "ADMYE025" = "F10thGrade11", "ADMYE026" = "F11thGrade11", "ADMYE027" = "F12thGrade11", "ADMYE028" = "FHighSchoolGrad11", "ADMYE029" = "FSomeCollege111", "ADMYE030" = "FSomeCollege1Plus11", "ADMYE031" = "FAssociate11", "ADMYE032" = "FBachelor11", "ADMYE033" = "FMaster11", "ADMYE034" = "FProfessional11", "ADMYE035" = "FDoctorate11"))
 ```
 
 ```{r}
@@ -143,6 +143,18 @@ coordinates <- coordinates %>%
 ```{r}
 #capitalizing the state name so I can merge by state name
 Education2006[,3] = toupper(Education2006[,3])
+Education2011[,3] = toupper(Education2011[,3])
+
+GC2006[,3] = toupper(GC2006[,3])
+GC2011[,3] = toupper(GC2011[,3])
+
+PCI2006[,3] = toupper(PCI2006[,3])
+PCI2011[,3] = toupper(PCI2011[,3])
+
+Race2006[,3] = toupper(Race2006[,3])
+Race2011[,3] = toupper(Race2011[,3])
+
+
 ```
 
 ```{r}
@@ -177,5 +189,12 @@ patents$County <- patents$CountyNew1
 #first merger with coordinates and patents
 
 pat_coord <- inner_join(patents, coordinates, by = "FIPS")
+#renaming variables in set so it can merge
+pat_coord <- pat_coord %>%
+  rename(c('State or Territory' = "State"))
+
+#merging patent and coordinates data set with gini coefficient
+
+gcpcoord <- inner_join(pat_coord, GC2006, )
 ```
 
