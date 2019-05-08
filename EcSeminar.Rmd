@@ -140,3 +140,34 @@ coordinates <- coordinates %>%
   
 ```
 
+```{r}
+#capitalizing the state name so I can merge by state name
+Education2006[,3] = toupper(Education2006[,3])
+```
+
+```{r}
+patents <- patents %>%
+  rename(c('Regional Area Component' = "County"))
+```
+
+```{r}
+patents$CountyNew1 <-
+gsub("\\s*\\([^\\)]+\\)","",as.character(patents$County))
+
+patents$County <- patents$CountyNew1
+```
+
+
+```{r}
+#library(tm)
+
+#stopwords = c("[()]", "", "city")
+#stopwords = readLines('stopwords.txt')
+#x = patents$County
+#x = removeWords(x,stopwords)
+
+#patents$County_new <- x
+
+#patents <-  patents %>%
+  #str_remove_all("(city)")
+```
