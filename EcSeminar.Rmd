@@ -146,8 +146,9 @@ Education2006[,3] = toupper(Education2006[,3])
 ```
 
 ```{r}
+#renaming a few patent variables, preparing for easier merger by changing FIPS name
 patents <- patents %>%
-  rename(c('Regional Area Component' = "County"))
+  rename(c('Regional Area Component' = "County", 'FIPS Code' = "FIPS"))
 ```
 
 ```{r}
@@ -171,3 +172,10 @@ patents$County <- patents$CountyNew1
 #patents <-  patents %>%
   #str_remove_all("(city)")
 ```
+
+```{r}
+#first merger with coordinates and patents
+
+pat_coord <- inner_join(patents, coordinates, by = "FIPS")
+```
+
