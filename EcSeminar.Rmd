@@ -305,3 +305,12 @@ final_all <- new_all %>%
   select(FIPS:COUNTY, patents06, patents11, Abbreviation, Longitude, Latitude, GC_Estimate6, GC_Estimate11, Total_Population6.x:MalePop6, MDropOut06:MPostCollege06, FemalePop6, FDropOut06:FPostCollege06, MalePop11, MDropOut011:MPostCollege011, FemalePop11, FDropOut011:FPostCollege011)
 ```
 
+```{r}
+#black and white race ratio, pci, bachelors and post college ratio, 
+#creating per capita and ratio variables
+
+final_all <- final_all %>%
+  mutate(PatentRatio06 = patents06 / Total_Population6.x)
+
+```
+
