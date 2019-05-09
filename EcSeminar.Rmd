@@ -299,3 +299,9 @@ new_all$FPostCollege011 <- rowSums( new_all[,106:108])
 
 ```
 
+```{r}
+#getting my final data set comprised of variables I need
+final_all <- new_all %>%
+  select(FIPS:COUNTY, patents06, patents11, Abbreviation, Longitude, Latitude, GC_Estimate6, GC_Estimate11, Total_Population6.x:MalePop6, MDropOut06:MPostCollege06, FemalePop6, FDropOut06:FPostCollege06, MalePop11, MDropOut011:MPostCollege011, FemalePop11, FDropOut011:FPostCollege011)
+```
+
