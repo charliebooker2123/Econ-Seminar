@@ -236,12 +236,66 @@ new_all$MHighSchoolGrad06 <- new_all$MHighSchoolGrad6
 new_all$MSomeCollege06 <- rowSums( new_all[,51:53])
 
 #renaming bachelor degree
-new_all$MBachelor06 <- new_all$Bachelor6
+new_all$MBachelor06 <- new_all$MBachelor6
 
 #males with post college education(masters, professional, doctorate)
 new_all$MPostCollege06 <- rowSums( new_all[,55:57])
 
-#DOING THE SAME FOR FEMALE EDUCATION
+#DOING THE SAME FOR FEMALE EDUCATION (Repeat steps from Male education)
+
+#summing columns for education
+#males who dropped out before graduating high school 2006-2010
+new_all$FDropOut06 <- rowSums( new_all[,59:66])
+
+#keep high school grad, but renaming it
+new_all$FHighSchoolGrad06 <- new_all$FHighSchoolGrad6
+
+#females with some college experience (from 1 year of college to associates)
+new_all$FSomeCollege06 <- rowSums( new_all[,68:71])
+
+#renaming bachelor degree
+new_all$FBachelor06 <- new_all$FBachelor6
+
+#females with post college education(masters, professional, doctorate)
+new_all$FPostCollege06 <- rowSums( new_all[,72:74])
+
+```
+
+
+```{r}
+#Repeating the entire previous chunk but instead with the year 2011 instead of 2006
+
+new_all$MDropOut011 <- rowSums( new_all[,76:83])
+
+#keep high school grad, but renaming it
+new_all$MHighSchoolGrad011 <- new_all$MHighSchoolGrad11
+
+#males with some college experience (from 1 year of college to associates)
+new_all$MSomeCollege011 <- rowSums( new_all[,85:87])
+
+#renaming bachelor degree
+new_all$MBachelor011 <- new_all$MBachelor11
+
+#males with post college education(masters, professional, doctorate)
+new_all$MPostCollege011 <- rowSums( new_all[,89:91])
+
+#DOING THE SAME FOR FEMALE EDUCATION (Repeat steps from Male education)
+
+#summing columns for education
+#males who dropped out before graduating high school 2006-2010
+new_all$FDropOut011 <- rowSums( new_all[,93:100])
+
+#keep high school grad, but renaming it
+new_all$FHighSchoolGrad011 <- new_all$FHighSchoolGrad11
+
+#females with some college experience (from 1 year of college to associates)
+new_all$FSomeCollege06 <- rowSums( new_all[,102:104])
+
+#renaming bachelor degree
+new_all$FBachelor011 <- new_all$FBachelor11
+
+#females with post college education(masters, professional, doctorate)
+new_all$FPostCollege011 <- rowSums( new_all[,106:108])
 
 ```
 
