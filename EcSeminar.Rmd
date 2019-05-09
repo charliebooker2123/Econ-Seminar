@@ -213,8 +213,35 @@ all <- inner_join(gcpcoord, GC2011, by = c("STATE", "COUNTY")) %>%
 
 ```{r}
 #editing the all data set and cutting out columns
-#not including all the extra mixed races
+#not including all the extra mixed races and margins of error
 new_all <- all %>%
-  select(FIPS:Total, Abbreviation, Longitude, Latitude, GC_Estimate6, GC_Margin_of_Error6, GC_Estimate11, GC_Margin_of_Error11, Total_Population6.x:Pacific6,)
+  select(FIPS:Total, Abbreviation, Longitude, Latitude, GC_Estimate6, GC_Estimate11, Total_Population6.x:Pacific6, Total_Population11.x:Pacific11, PCI_Estimate6, PCI_Estimate11, MalePop6:FDoctorate6, MalePop11:FDoctorate11)
+```
+
+```{r}
+#summing columns for patents 2006-2010
+new_all$patents06 <- rowSums( new_all[,11:15])
+
+#summing columns for patents 2011-2015
+new_all$patents11 <- rowSums( new_all[,16:20])
+
+#summing columns for education
+#males who dropped out before graduating high school 2006-2010
+new_all$MDropOut06 <- rowSums( new_all[,42:49])
+
+#keep high school grad, but renaming it
+new_all$MHighSchoolGrad06 <- new_all$MHighSchoolGrad6
+
+#males with some college experience (from 1 year of college to associates)
+new_all$MSomeCollege06 <- rowSums( new_all[,51:53])
+
+#renaming bachelor degree
+new_all$MBachelor06 <- new_all$Bachelor6
+
+#males with post college education(masters, professional, doctorate)
+new_all$MPostCollege06 <- rowSums( new_all[,55:57])
+
+#DOING THE SAME FOR FEMALE EDUCATION
+
 ```
 
