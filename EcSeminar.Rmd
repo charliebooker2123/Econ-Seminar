@@ -164,6 +164,7 @@ patents <- patents %>%
 ```
 
 ```{r}
+#getting rid of parentheses in the County column
 patents$CountyNew1 <-
 gsub("\\s*\\([^\\)]+\\)","",as.character(patents$County))
 
@@ -207,6 +208,12 @@ all <- inner_join(gcpcoord, GC2011, by = c("STATE", "COUNTY")) %>%
   inner_join(., PCI2011, by = c("STATE", "COUNTY")) %>%
   inner_join(., Education2006, by = c("STATE", "COUNTY")) %>%
   inner_join(., Education2011, by = c("STATE", "COUNTY")) 
+  
+```
+
+```{r}
+#editing the all data set and cutting out columns
+new_all <- all %>%
   
 ```
 
