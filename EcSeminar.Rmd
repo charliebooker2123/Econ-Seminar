@@ -213,7 +213,8 @@ all <- inner_join(gcpcoord, GC2011, by = c("STATE", "COUNTY")) %>%
 
 ```{r}
 #editing the all data set and cutting out columns
+#not including all the extra mixed races
 new_all <- all %>%
-  
+  select(FIPS:Total, Abbreviation, Longitude, Latitude, GC_Estimate6, GC_Margin_of_Error6, GC_Estimate11, GC_Margin_of_Error11, Total_Population6.x:Pacific6,)
 ```
 
