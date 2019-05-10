@@ -411,7 +411,9 @@ fit5 <-
 
 ```
 
-```{r}
+```{r, fig.width=12, fig.height=8}
+
+
 ditch_the_axes <- theme(
   axis.text = element_blank(),
   axis.line = element_blank(),
@@ -451,9 +453,35 @@ states <- map_data("state")
 usmap <- ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) + coord_fixed(1.3) + 
   geom_polygon(color = "black", fill = "white")
 
-hmap <- usmap + geom_polygon(data = mapheat, aes(fill = PatentRatio06), color = "black") + geom_polygon(color = "white", fill = NA) + theme_bw() + ditch_the_axes
+#heat maps using patent
+patentmap6 <- usmap + geom_polygon(data = mapheat, aes(fill = PatentRatio06), color = "black") + geom_polygon(color = "white", fill = NA) + theme_bw() + ditch_the_axes
 
-hmap + scale_fill_gradient(trans = "log10")
+patentmap6 + scale_fill_gradientn(colours = rev(rainbow(2)),
+                                   breaks = c(.0005, .001, .005, .01, .02),
+                                   trans = "log10")
+
+patentmap11 <- usmap + geom_polygon(data = mapheat, aes(fill = PatentRatio11), color = "black") + geom_polygon(color = "white", fill = NA) + theme_bw() + ditch_the_axes
+
+patentmap11 + scale_fill_gradientn(colours = rev(rainbow(2)),
+                                   breaks = c(.0005, .001, .005, .01, .02),
+                                   trans = "log10")
+
+
+#heat maps using gini coefficient
+gc6 <- usmap + geom_polygon(data = mapheat, aes(fill = GC_Estimate6), color = "black") + geom_polygon(color = "white", fill = NA) + theme_bw() + ditch_the_axes
+
+gc6 + scale_fill_gradientn(colours = rev(rainbow(2)),
+                                   trans = "log10")
+
+gc11 <- usmap + geom_polygon(data = mapheat, aes(fill = GC_Estimate11), color = "black") + geom_polygon(color = "white", fill = NA) + theme_bw() + ditch_the_axes
+
+gc11 + scale_fill_gradientn(colours = rev(rainbow(2)),
+                                   trans = "log10")
+
+
+library(jtools)
+
+summ(fit)
 
 #usmap <- ggplot(data = counties) +
 #  geom_polygon(aes(x = long, y = lat, group = group), fill = "white", color = "black") + 
