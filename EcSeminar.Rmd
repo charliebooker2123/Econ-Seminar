@@ -379,7 +379,44 @@ final_all <- final_all %>%
 ```{r}
 #Final and complete data set with few variables
 final <- final_all %>%
-  select(FIPS:COUNTY, Abbreviation:GC_Estimate11, Total_Population6.x, Total_Population11.x, PatentRatio06:FPostRatio11)
+  select(FIPS:COUNTY, Abbreviation:GC_Estimate11, Total_Population6.x, Total_Population11.x, PCI_Estimate6, PCI_Estimate11, PatentRatio06:FPostRatio11)
 
+```
+
+```{r}
+#linear regression
+#trying out log
+
+
+fit <- 
+  lm(PatentRatio06 ~ GC_Estimate6 + PCI_Estimate6 + WhiteRatio06 + BlackRatio06 + MBachRatio06 + FBachRatio06, data = final)
+
+fit2 <- 
+   lm(PatentRatio11 ~ GC_Estimate6 + PCI_Estimate6 + WhiteRatio06 + BlackRatio06 + MBachRatio06 + FBachRatio06, data = final)
+
+fit3 <-
+   lm(PatentRatio11 ~ GC_Estimate11 + PCI_Estimate11 + WhiteRatio11 + BlackRatio11 + MBachRatio11 + FBachRatio11, data = final)
+```
+
+```{r}
+#trying a new fit with big counties 
+big <- final %>%
+  filter(Total_Population11.x >= 90000)
+
+fit4 <- 
+  lm(PatentRatio06 ~ GC_Estimate6 + PCI_Estimate6 + WhiteRatio06 + BlackRatio06 + MBachRatio06 + FBachRatio06, data = big)
+
+fit5 <- 
+  lm(PatentRatio06 ~ PCI_Estimate6 + WhiteRatio06 + BlackRatio06 + MBachRatio06 + FBachRatio06, data = final)
+
+```
+
+```{r}
+#working on map
+states <- map_data("state")
+
+usmap <- ggplot(data = states) + 
+  geom_polygon(aes(x = long, y = lat, group = group), fill = "white", color = "black") + 
+  coord_fixed(1.3) + guides(fill=FALSE)
 ```
 
