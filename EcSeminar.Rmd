@@ -309,8 +309,71 @@ final_all <- new_all %>%
 #black and white race ratio, pci, bachelors and post college ratio, 
 #creating per capita and ratio variables
 
+#PATENT PER CAPITA
+#patent per capita in 2006
 final_all <- final_all %>%
   mutate(PatentRatio06 = patents06 / Total_Population6.x)
+
+#patent per capita in 2011
+final_all <- final_all %>%
+  mutate(PatentRatio11 = patents11 / Total_Population11.x)
+
+#RACE(WHITE RATIO 1st and BLACK RATIO 2nd)
+
+#White
+#White racial ratio in 2006
+final_all <- final_all %>%
+  mutate(WhiteRatio06 = White6 / Total_Population6.x)
+
+#White racial ratio in 2011
+final_all <- final_all %>%
+  mutate(WhiteRatio11 = White11 / Total_Population11.x)
+
+#BLACK
+#black racial ratio in 2006
+final_all <- final_all %>%
+  mutate(BlackRatio06 = Black6 / Total_Population6.x)
+
+#Black racial ratio in 2011
+final_all <- final_all %>%
+  mutate(BlackRatio11 = Black11 / Total_Population11.x)
+
+#EDUCATION (BACHELORS AND POST COLLEGE)
+
+#MALE
+#Male Bachelor Ratio in 2006
+final_all <- final_all %>%
+  mutate(MBachRatio06 = MBachelor06 / Total_Population6.x)
+
+#Male Bachelor Ratio in 2011
+final_all <- final_all %>%
+  mutate(MBachRatio11 = MBachelor011 / Total_Population11.x)
+
+#Male Post College Ratio in 2006
+final_all <- final_all %>%
+  mutate(MPostRatio06 = MPostCollege06 / Total_Population6.x)
+
+#Male Post College Ratio in 2011
+final_all <- final_all %>%
+  mutate(MPostRatio11 = MPostCollege011 / Total_Population11.x)
+
+#FEMALE
+#Female Bachelor Ratio in 2006
+final_all <- final_all %>%
+  mutate(FBachRatio06 = FBachelor06 / Total_Population6.x)
+
+#Female Bachelor Ratio in 2011
+final_all <- final_all %>%
+  mutate(FBachRatio11 = FBachelor011 / Total_Population11.x)
+
+#Female Post College Ratio in 2006
+final_all <- final_all %>%
+  mutate(FPostRatio06 = FPostCollege06 / Total_Population6.x)
+
+#Female Post College Ratio in 2011
+final_all <- final_all %>%
+  mutate(FPostRatio11 = FPostCollege011 / Total_Population11.x)
+
 
 ```
 
