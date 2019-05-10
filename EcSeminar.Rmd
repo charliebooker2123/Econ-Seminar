@@ -5,7 +5,7 @@ date: "May 5, 2019"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, message = FALSE, echo = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(plyr)
@@ -25,7 +25,7 @@ library(dplyr)
 library(mapproj)
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #loading in data
 patents <- read_excel("Patent_County.xlsx", skip = 1)
 
@@ -50,13 +50,13 @@ coordinates <- read_xlsx('County Coordinates.xlsx', skip = 1)
 
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #editng the data sets
 #trimming out unnecessary columns
 ```
 
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #Gini Coefficients edits
 #selecting and getting rid of columns
 GC2006 <- GC2006 %>%
@@ -73,7 +73,7 @@ GC2011 <- GC2011 %>%
   rename(c("AD4BE001" = "GC_Estimate11", "AD4BM001" = "GC_Margin_of_Error11"))
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #per capita income edits
 #selecting and getting rid of columns
 PCI2006 <- PCI2006 %>%
@@ -90,7 +90,7 @@ PCI2011 <- PCI2011 %>%
   rename(c("ADOLE001" = "PCI_Estimate11", "ADOLM001" = "PCI_Margin_of_Error11"))
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #Race edits
 #selecting and getting rid of columns
 Race2006 <- Race2006 %>%
@@ -109,7 +109,7 @@ Race2011 <- Race2011 %>%
            "ADKXM001" = "Total_PopulationErr11", "ADKXM002" = "WhiteErr11", "ADKXM003" = "BlackErr11", "ADKXM004" = "Native_AmericanErr11", "ADKXM005" = "AsianErr11", "ADKXM006" = "PacificErr11", "ADKXM007" = "Some_OtherErr11", "ADKXM008" = "Two_or_MoreErr11", "ADKXM009" = "Two_or_More_Some_OtherErr11", "ADKXM010" = "Three_or_MoreErr11"))
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #Education by Sex edits
 #selecting and getting rid of columns
 Education2006 <- Education2006 %>%
@@ -128,7 +128,7 @@ Education2011 <- Education2011 %>%
            "ADMYE019" = "FemalePop11", "ADMYE020" = "FNoSchool11", "ADMYE021" = "F4thGrade11", "ADMYE022" = "F5thGrade11", "ADMYE023" = "F7thGrade11", "ADMYE024" = "F9thGrade11", "ADMYE025" = "F10thGrade11", "ADMYE026" = "F11thGrade11", "ADMYE027" = "F12thGrade11", "ADMYE028" = "FHighSchoolGrad11", "ADMYE029" = "FSomeCollege111", "ADMYE030" = "FSomeCollege1Plus11", "ADMYE031" = "FAssociate11", "ADMYE032" = "FBachelor11", "ADMYE033" = "FMaster11", "ADMYE034" = "FProfessional11", "ADMYE035" = "FDoctorate11"))
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #editing the coordinates data set
 #renaming the columns
 coordinates <- coordinates %>%
@@ -140,7 +140,7 @@ coordinates <- coordinates %>%
   
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #capitalizing the state name so I can merge by state name
 Education2006[,3] = toupper(Education2006[,3])
 Education2011[,3] = toupper(Education2011[,3])
@@ -157,13 +157,13 @@ Race2011[,3] = toupper(Race2011[,3])
 
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #renaming a few patent variables, preparing for easier merger by changing FIPS name
 patents <- patents %>%
   rename(c('Regional Area Component' = "County", 'FIPS Code' = "FIPS"))
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #getting rid of parentheses in the County column
 patents$CountyNew1 <-
 gsub("\\s*\\([^\\)]+\\)","",as.character(patents$County))
@@ -172,7 +172,7 @@ patents$County <- patents$CountyNew1
 ```
 
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #library(tm)
 
 #stopwords = c("[()]", "", "city")
@@ -186,7 +186,7 @@ patents$County <- patents$CountyNew1
   #str_remove_all("(city)")
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #first merger with coordinates and patents
 
 pat_coord <- inner_join(patents, coordinates, by = "FIPS")
@@ -199,7 +199,7 @@ pat_coord <- pat_coord %>%
 gcpcoord <- inner_join(pat_coord, GC2006, by = c("STATE", "COUNTY"))
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #merging all sets
 all <- inner_join(gcpcoord, GC2011, by = c("STATE", "COUNTY")) %>%
   inner_join(., Race2006, by = c("STATE", "COUNTY")) %>%
@@ -211,14 +211,14 @@ all <- inner_join(gcpcoord, GC2011, by = c("STATE", "COUNTY")) %>%
   
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #editing the all data set and cutting out columns
 #not including all the extra mixed races and margins of error
 new_all <- all %>%
   select(FIPS:Total, Abbreviation, Longitude, Latitude, GC_Estimate6, GC_Estimate11, Total_Population6.x:Pacific6, Total_Population11.x:Pacific11, PCI_Estimate6, PCI_Estimate11, MalePop6:FDoctorate6, MalePop11:FDoctorate11)
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #summing columns for patents 2006-2010
 new_all$patents06 <- rowSums( new_all[,11:15])
 
@@ -262,7 +262,7 @@ new_all$FPostCollege06 <- rowSums( new_all[,72:74])
 ```
 
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #Repeating the entire previous chunk but instead with the year 2011 instead of 2006
 
 new_all$MDropOut011 <- rowSums( new_all[,76:83])
@@ -299,13 +299,13 @@ new_all$FPostCollege011 <- rowSums( new_all[,106:108])
 
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #getting my final data set comprised of variables I need
 final_all <- new_all %>%
   select(FIPS:COUNTY, patents06, patents11, Abbreviation, Longitude, Latitude, GC_Estimate6, GC_Estimate11, Total_Population6.x:MalePop6, MDropOut06:MPostCollege06, FemalePop6, FDropOut06:FPostCollege06, MalePop11, MDropOut011:MPostCollege011, FemalePop11, FDropOut011:FPostCollege011)
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #black and white race ratio, pci, bachelors and post college ratio, 
 #creating per capita and ratio variables
 
@@ -376,14 +376,14 @@ final_all <- final_all %>%
 
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #Final and complete data set with few variables
 final <- final_all %>%
   select(FIPS:COUNTY, Abbreviation:GC_Estimate11, Total_Population6.x, Total_Population11.x, PCI_Estimate6, PCI_Estimate11, PatentRatio06:FPostRatio11)
 
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #linear regression
 #trying out log
 
@@ -398,7 +398,7 @@ fit3 <-
    lm(PatentRatio11 ~ GC_Estimate11 + PCI_Estimate11 + WhiteRatio11 + BlackRatio11 + MBachRatio11 + FBachRatio11, data = final)
 ```
 
-```{r}
+```{r, message = FALSE, echo = FALSE}
 #trying a new fit with big counties 
 big <- final %>%
   filter(Total_Population11.x >= 90000)
@@ -411,7 +411,7 @@ fit5 <-
 
 ```
 
-```{r, fig.width=12, fig.height=8}
+```{r, fig.width=12, fig.height=8, message = FALSE, echo = FALSE}
 
 
 ditch_the_axes <- theme(
