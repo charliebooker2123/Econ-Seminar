@@ -374,6 +374,12 @@ final_all <- final_all %>%
 final_all <- final_all %>%
   mutate(FPostRatio11 = FPostCollege011 / Total_Population11.x)
 
+```
+
+```{r}
+#Final and complete data set with few variables
+final <- final_all %>%
+  select(FIPS:COUNTY, Abbreviation:GC_Estimate11, Total_Population6.x, Total_Population11.x, PatentRatio06:FPostRatio11)
 
 ```
 
